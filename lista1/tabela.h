@@ -9,7 +9,7 @@ typedef struct simbolo {
 
 
 typedef struct no_tabela {
-	simbolo dado;
+	simbolo *dado;
 	struct no_tabela * proximo;
 } no_tabela;
 
@@ -18,9 +18,9 @@ typedef struct tabela_simbolo {
 	no_tabela *ultimo;
 	int proximo_codigo;
 } tabela_simbolo;
-	
+
 void inicializar(tabela_simbolo *tabela);
-void inserir_simbolo(tabela_simbolo *tabela, simbolo s);
+void inserir_simbolo(tabela_simbolo *tabela, simbolo *s);
 void exibir_tabela(tabela_simbolo *tabela);
 simbolo * localizar_simbolo(tabela_simbolo *tabela, char *lexema);
 simbolo * localizar_simbolo_cod(tabela_simbolo *tabela, int cod);

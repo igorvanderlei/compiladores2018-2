@@ -455,9 +455,9 @@ char *yytext;
 #line 1 "lexico.lex"
 #line 2 "lexico.lex"
 #include <stdio.h>
-//#include "tabela.h"
+#include "tabela.h"
 
-//tabela tab;
+tabela_simbolo tab;
 
 #line 463 "lex.yy.c"
 
@@ -758,8 +758,8 @@ YY_RULE_SETUP
 #line 20 "lexico.lex"
 { //criar o símbolo, inserir na tabela
 						//através do método instalar_simbolo
-						//instalar_simbolo(tab);
-						printf("<ID, %d>", 1);
+						int cod = instalar_simbolo(yytext);
+						printf("<ID, %d>", cod);
 					}
 	YY_BREAK
 case 5:
@@ -1775,8 +1775,9 @@ void yyfree (void * ptr )
 int yywrap() {
 	return 0;
 }
+
 int main(int argc, char * argv[]) {
-	//inicializar(&tab);
+	inicializar(&tab);
 	yylex();
 }
 
