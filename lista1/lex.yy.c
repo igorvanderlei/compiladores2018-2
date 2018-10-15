@@ -458,8 +458,7 @@ char *yytext;
 #include "tabela.h"
 
 tabela_simbolo tab;
-
-#line 463 "lex.yy.c"
+#line 462 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -677,10 +676,10 @@ YY_DECL
 		}
 
 	{
-#line 15 "lexico.lex"
+#line 13 "lexico.lex"
 
 
-#line 684 "lex.yy.c"
+#line 683 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -740,22 +739,22 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 17 "lexico.lex"
+#line 15 "lexico.lex"
 {}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 18 "lexico.lex"
+#line 16 "lexico.lex"
 { printf("<IF, NULL>"); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 19 "lexico.lex"
+#line 17 "lexico.lex"
 { printf("<RELOP, LE>"); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 20 "lexico.lex"
+#line 18 "lexico.lex"
 { //criar o símbolo, inserir na tabela
 						//através do método instalar_simbolo
 						int cod = instalar_simbolo(yytext);
@@ -764,10 +763,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 27 "lexico.lex"
+#line 25 "lexico.lex"
 ECHO;
 	YY_BREAK
-#line 771 "lex.yy.c"
+#line 770 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1768,16 +1767,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 27 "lexico.lex"
+#line 25 "lexico.lex"
 
 
 
-int yywrap() {
-	return 0;
-}
-
-int main(int argc, char * argv[]) {
+int main(int argc, char *argv[]) {
 	inicializar(&tab);
 	yylex();
 }
+int yywrap() { return 1; }
 

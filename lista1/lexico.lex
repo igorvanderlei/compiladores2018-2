@@ -3,7 +3,6 @@
 #include "tabela.h"
 
 tabela_simbolo tab;
-
 %}
 
 ws			[ \t\n]
@@ -11,7 +10,6 @@ letra		[a-zA-Z]
 digito	[0-9]
 numero	{digito}+
 id			{letra}({letra}|{digito})*
-
 %%
 
 {ws}			{}
@@ -26,11 +24,9 @@ if				{ printf("<IF, NULL>"); }
 
 %%
 
-int yywrap() {
-	return 0;
-}
-
-int main(int argc, char * argv[]) {
+int main(int argc, char *argv[]) {
 	inicializar(&tab);
 	yylex();
 }
+
+int yywrap() { return 1; }
