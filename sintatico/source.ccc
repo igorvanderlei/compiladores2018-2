@@ -1,0 +1,16 @@
+{ 
+	int x; 
+	int y; 
+	x = 1;
+	{ 
+		float x; 
+		x = 2;
+	} 
+	y = x;
+	PRINT y;
+	{
+		int t;
+		{float _kkk; float j;}
+	}
+}
+
